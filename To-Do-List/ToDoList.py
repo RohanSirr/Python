@@ -2,16 +2,16 @@ def menu():
     print("\n---- To-Do-List ----")
     print("1. Add Task")
     print("2. View Task")
-    print("3. Mark Task as Done")
+    print("3. Mark Task as Done")                                   # a function to show the options 
     print("4. Delete Task")
     print("5. Quit")
 
-def addTask(tasks):
-    task = input("Enter a task: ")
+def addTask(tasks):                                                 # a function to add the task 
+    task = input("Enter a task: ")                              
     tasks.append({'task': task, 'done': False})
     print("Task added successfully")
 
-def viewTask(tasks):
+def viewTask(tasks):                                                # a function to view the task
     if not tasks:
         print("No tasks available")
     else:
@@ -20,7 +20,7 @@ def viewTask(tasks):
             status = "Done" if t['done'] else "Not Done"
             print(f"{idx}. {t['task']} - {status}")
 
-def markDoneTask(tasks):
+def markDoneTask(tasks):                                            # a function to mark the task as done
     viewTask(tasks)
     if not tasks:
         print("No tasks available")
@@ -35,7 +35,7 @@ def markDoneTask(tasks):
     else:
         print("Please enter a valid no. ")
 
-def deleteTask(tasks):
+def deleteTask(tasks):                                              # a function to delete the task
     viewTask(tasks)
     if not tasks:
         print("No Task available")
@@ -50,7 +50,7 @@ def deleteTask(tasks):
     else:
         print("Please enter a valid no.")
 
-def main():
+def main():                                                          # Here is the main menu option where we choose the option
     tasks = []
     while True:
         menu()
@@ -60,7 +60,7 @@ def main():
         elif choice == '2':
             viewTask(tasks)
         elif choice == '3':
-            markDoneTask(tasks)
+            markDoneTask(tasks)                                            
         elif choice == '4':
             deleteTask(tasks)
         elif choice == '5':
