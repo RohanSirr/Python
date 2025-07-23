@@ -1,4 +1,4 @@
-def showMenu():
+def showMenu():                                                                                # a function for showing Menu
     print("\n**** Shopping List Manager ****")
     print("1. Add item and quantity")
     print("2. View Shopping List")
@@ -7,7 +7,7 @@ def showMenu():
     print("5. Sort List (A-Z or by quantity)")
     print("6. Exit")
 
-def addItem(shoppingList):
+def addItem(shoppingList):                                                                     # a function for adding item
     item = input("Enter item name: ").strip()
     qtyInput = input("Enter quantity: ").strip()
     if not qtyInput.isdigit() or int(qtyInput) <= 0:
@@ -22,7 +22,7 @@ def addItem(shoppingList):
     shoppingList.append({'item': item, 'quantity': qty})
     print("Item added to list.")
 
-def viewItem(shoppingList):
+def viewItem(shoppingList):                                                                     # a function for viewing items
     if not shoppingList:
         print("Shopping list is empty.")
     else:
@@ -30,7 +30,7 @@ def viewItem(shoppingList):
         for idx, entry in enumerate(shoppingList, 1):
             print(f"{idx}. {entry['item']} - {entry['quantity']}")
 
-def updateQuantity(shoppingList):
+def updateQuantity(shoppingList):                                                               # a function for updating quantity
     viewItem(shoppingList)
     if not shoppingList:
         print("Shopping list is empty.")
@@ -50,7 +50,7 @@ def updateQuantity(shoppingList):
     else:
         print("Invalid input. Please enter a number.")
 
-def removeItem(shoppingList):
+def removeItem(shoppingList):                                                                   # a function to remove item
     viewItem(shoppingList)
     if not shoppingList:
         return
@@ -65,7 +65,7 @@ def removeItem(shoppingList):
     else:
         print("Please enter a valid no. ")
 
-def sortList(shoppingList):
+def sortList(shoppingList):                                                                     # a function to sort list
     if not shoppingList:
         print("List is empty. Nothingg to sort.")
         return
@@ -79,7 +79,7 @@ def sortList(shoppingList):
     else:
         print("Invalid choice. Please try again.")
 
-def main():
+def main():                                                                                     # a main function handle all operations
     shopping_list = []
     while True:
         showMenu()
