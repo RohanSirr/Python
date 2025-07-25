@@ -1,6 +1,6 @@
-class Account:
-    """Class to represent a bank account."""
-    account_counter = 1001  # Class variable for unique account numbers
+class Account:                                                  #Class to represent a bank account.
+    
+    account_counter = 1001                                      # Class variable for unique account numbers
 
     def __init__(self, name, initial_deposit):
         self.account_no = Account.account_counter
